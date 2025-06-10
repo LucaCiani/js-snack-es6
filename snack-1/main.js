@@ -42,8 +42,7 @@ for (let i = 0; i < bikes.length; i++) {
     bikesWeight.push(bikes[i].weight.value);
 }
 
-const lightestBike = bikes.reduce((min, current) => {
-    return current.weight.value < min.weight.value ? current : min;
-});
+const lightestWeight = Math.min(...bikesWeight);
 
-console.log("La bici più leggera è:", lightestBike);
+const lightestBike = bikes.find((bike) => bike.weight.value == lightestWeight);
+console.log(lightestBike);
